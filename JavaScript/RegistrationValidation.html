@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function validateValue() {
+		var n=document.myform.uname.value;
+		var a=document.myform.address.value;
+		var email=document.myform.mail.value;
+		var pin=document.myform.pincode.value;
+		var phoneno=document.myform.phone.value;
+		
+		var sex=document.myform.gender.value;
+		var dist=document.myform.options.value;
+		var atpos=email.indexOf("@");
+		var dotpos=email.lastIndexOf(".");
+		var p1=document.myform.pass.value;
+		var p2=document.myform.cpass.value;
+		
+		
+		if (n==null||n=="") 
+		{
+			alert(' Name Field cannot be empty');
+			return false;
+		}
+		else if(sex==null||sex=="")
+		{
+			alert('Gender Field cannot be empty');
+			return false;
+
+		}
+		else if (a==null||a=="")
+		 {
+		 	alert('Address Field cannot be empty');
+			return false;
+		 }
+		 else if (isNaN(pin))
+		 {
+		 	alert('Pincode should be number.');
+			return false;
+		 }
+
+		 else if (dist=="select")
+		 {
+		 	alert('Select a district');
+			return false;
+		 }
+		 
+		 else if (atpos<1||dotpos<atpos+2||dotpos+2>=x.length) 
+		{
+			alert('Please enter valid email address \n Position of @  '+atpos+'\n Position of .  '+dotpos);
+			return false;
+		}
+		
+		
+		 
+
+	}
+
+	</script>
+
+</head>
+<body>
+<center><h1>Register</h1></center>
+<form name="myform"  method="post" onsubmit="validateValue()">
+	Name:<br><input type="text" name="uname" ><br>
+	Gender:<br><br>
+	<input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other<br><br>
+Address:<br><input type="address" name="address"><br>
+Pin Code:<br><input type="text" name="pincode"><br>	
+District:<br><br><select name="options">
+	  <option value="select" >Select</option>
+
+  <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+  <option value="Kollam">Kollam</option>
+  <option value="Alappuzha">Alappuzha</option>
+  <option value="Pathanamthitta">Pathanamthitta</option>
+  <option value="Idukki">Idukki</option>
+  <option value="Kottayam">Kottayam</option>
+  <option value="Ernakulam">Ernakulam</option>
+  <option value="Thrissur">Thrissur</option>
+  <option value="Malapuram">Malapuram</option>
+  <option value="Palakkad">Palakkad</option>
+  <option value="Kozhikode">Kozhikode</option>
+  <option value="Wayanad">Wayanad</option>
+  <option value="Kannur">Kannur</option>
+  <option value="Kasargode">Kasargode</option>
+</select><br><br>
+Email ID:<br><input type="text" name="mail"><br>
+
+Password :<input type="password" name="pass"><br>
+Confirm Password:<input type="password" name="cpass">
+<hr>
+<input type="submit" value="Register">
+</form>
+
+
+</body>
+</html>

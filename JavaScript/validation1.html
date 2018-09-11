@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function validateemail () {
+		var x=document.myform.email.value;
+		var atpos=x.indexOf("@");
+		var dotpos=x.lastIndexOf(".");
+		if (atpos<1||dotpos<atpos+2||dotpos+2>=x.length) 
+		{
+			alert('Please enter valid email address \n Position of @  '+atpos+'\n Position of .  '+dotpos);
+			return false;
+		}
+		
+	}
+	</script>
+</head>
+<body>
+<form name="myform" method="post" action="#" onsubmit="return validateemail()">
+Email : <input type="text" name="email"><br>
+<input type="submit" value="register">
+	
+</form>
+
+</body>
+</html>

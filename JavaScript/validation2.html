@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	function validatepassword () 
+	{
+		var p1=document.myform.password.value;
+		var p2=document.myform.cpassword.value;
+		if (p1==p2) 
+		{
+			alert('Password matches');
+			return true;
+		}
+		else
+		{
+			alert('Password mismatch');
+			return false;
+		}
+	}
+
+	</script>
+</head>
+<body>
+<form name="myform" action="#" method="post" onsubmit="return validatepassword()">
+	<label for="pass" >Enter password        :</label>
+	<input type="password" name="password" style="width=200px"><br>
+	<label for="pass" >Reenter password      :</label><input type="password" name="cpassword" style="width=200px"><br>
+	<input type="submit" value="login">
+
+</form>
+
+</body>
+</html>
