@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<p>The hexadecimal value of 255 is</p>
+<h3>{{myHex}}</h3>
+	
+</div>
+
+<script type="text/javascript">
+	var app=angular.module('myApp',[]);
+	app.service('hexify',function(){
+		this.myFunc=function(x){return x.toString(16);}	
+	});
+	app.controller('myCtrl',function($scope,hexify){
+		
+		$scope.myHex=hexify.myFunc(255);
+		});
+	</script>
+</body>
+</html>
